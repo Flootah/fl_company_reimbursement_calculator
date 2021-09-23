@@ -55,7 +55,7 @@ int dinnerAllowed(int timeDept, int timeArrival, int numDays){
 /* Here we are just recalling the functions again
 in order to get the allowed number of meals, and then we're going to
 multiply it by their respective costs */
-int costAlloted(int timeDept, int timeArrival, int numDays) {
+int costAllotedMeals(int timeDept, int timeArrival, int numDays) {
     int breakfastCost = breakfastAllowed(timeDept, timeArrival, numDays) * 9;
     int lunchCost = lunchAllowed(timeDept, timeArrival, numDays) * 12;
     int dinnerCost = dinnerAllowed(timeDept, timeArrival, numDays) * 16;
