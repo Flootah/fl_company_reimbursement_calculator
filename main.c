@@ -59,10 +59,10 @@ int main(int argc, char(*argv[])) {
         scanf("%d", &tripDays);
         printf("Enter the hour of departure on the first day of the trip:\n");
         printf("Please use 24 hour time. For example, if you depart at 2pm, enter '14'\n");
-        scanf("%d", &arrivalTime);
+        scanf("%d", &departureTime);
         printf("Enter the hour of arrival back home on the last day of the trip:\n");
         printf("Please use 24 hour time. For example, if you arrive at 2pm, enter '14'\n");
-        scanf("%d", &departureTime);
+        scanf("%d", &arrivalTime);
         // calculate alotted meals based on trip arrival, departure, and length
         breakfasts = breakfastAllowed(departureTime, arrivalTime, tripDays);
         lunches = lunchAllowed(departureTime, arrivalTime, tripDays);
@@ -97,14 +97,13 @@ int main(int argc, char(*argv[])) {
         //parkingCovered = costAllotedParking(tripDays);
         //vehicleExpenses = costAllotedMiles(milesDriven);
         printf("\n");
-        printf("Airfare Expenses: %.2f Airfare Allowances: %.2f\n", airfare, airfare);
-        printf("Meal Expenses: %.2f Meal Allowances: %.2f\n", mealFares, mealCovered);
-        printf("Rental Vehicle Expenses: %.2f Rental Vehicle Allowances: %.2jf\n", rentalFare, rentalFare);
-        printf("Private Vehicle Expenses: %.2f Private Vehicle Allowances: %.2f\n", vehicleExpenses, vehicleExpenses);
-        printf("Taxi Expenses: %.2f Taxi Allowances: %.2f\n", taxiFees, taxiCovered);
-        printf("Parking Expenses: %.2f Parking Allowances: %.2f\n", parkingFees, parkingCovered);
-        printf("Conference/Seminar Expenses: %.2f Conference/Seminar Allowances: %.2f\n", conferenceFees, conferenceFees);
-        printf("Hotel Expenses: %.2f Hotel Allowances: %.2f\n", hotelExpenses, hotelCovered);
+        printf("%37s", "Airfare Expenses: ");               printf("%8.2f ", airfare);           printf("%37s", "Airfare Allowances: ");             printf("%8.2f\n", airfare);
+        printf("%37s", "Meal Expenses: ");                  printf("%8.2f ", mealFares);         printf("%37s", "Meal Allowances: ");                printf("%8.2f\n", mealCovered);
+        printf("%37s", "Rental Vehicle Expenses: ");        printf("%8.2f ", rentalFare);        printf("%37s", "Rental Vehicle Allowances: ");      printf("%8.2f\n", rentalFare);
+        printf("%37s", "Private Vehicle Expenses: ");       printf("%8.2f ", vehicleExpenses);   printf("%37s", "Private Vehicle Allowances: ");     printf("%8.2f\n", vehicleExpenses);
+        printf("%37s", "Parking Expenses: ");               printf("%8.2f ", parkingFees);       printf("%37s", "Parking Allowances: ");             printf("%8.2f\n", parkingCovered);
+        printf("%37s", "Conference/Seminar Expenses: ");    printf("%8.2f ", conferenceFees);    printf("%37s", "Conference/Seminar Allowances: ");  printf("%8.2f\n", conferenceFees);
+        printf("%37s", "Hotel Expenses: ");                 printf("%8.2f ", hotelExpenses);     printf("%37s", "Hotel Allowances: ");               printf("%8.2f\n", hotelCovered);
 
         printf("\n");
         // calculate expenses and allowances, then get the difference
@@ -116,12 +115,13 @@ int main(int argc, char(*argv[])) {
         totalDifferences = (float) fabs(totalDifferences);  // get absolute value of difference for future display
  
         // print final values
-        printf("Total Travel Expenses: %.2f\nTotal Travel Allowances: %.2f\n", totalExpenses, totalAllowances);
+        printf("%37s", "Total Travel Expenses: "); printf("%8.2f\n", totalExpenses);
+        printf("%37s", "Total Travel Allowances: "); printf("%8.2f\n", totalAllowances);
         // change last print based on if we detected and excess or not.
         if(!excess) {
-            printf("Excess to be reimbursed by businessperson: %.2f\n", totalDifferences);
+            printf("%37s", "Excess to be reimbursed by employee: "); printf("%8.2f\n", totalDifferences);
         } else {
-            printf("Amount saved by businessperson: %.2f", totalDifferences);
+            printf("%37s", "Amount saved by employee: "); printf("%8.2f\n", totalDifferences);
         }
 
 
