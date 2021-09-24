@@ -3,6 +3,7 @@
 #include <math.h>
 #include "./meal.c"
 #include "./hotelExpenses.c"
+#include "./transportationExpenses.c"
 
 // ui globals
 int uiState;        // current state of ui state machine
@@ -93,9 +94,9 @@ int main(int argc, char(*argv[])) {
         parkingCovered = 0;
         vehicleExpenses = 0;
         hotelCovered = costAllotedHotels(tripDays);
-        //taxiCovered = costAllotedTaxis(tripDays);
-        //parkingCovered = costAllotedParking(tripDays);
-        //vehicleExpenses = costAllotedMiles(milesDriven);
+        taxiCovered = costAllotedTaxis(tripDays);
+        parkingCovered = costAllotedParking(tripDays);
+        vehicleExpenses = costAllotedMiles(milesDriven);
         printf("\n");
         printf("Airfare Expenses: %.2f Airfare Allowances: %.2f\n", airfare, airfare);
         printf("Meal Expenses: %.2f Meal Allowances: %.2f\n", mealFares, mealCovered);
