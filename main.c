@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "./meal.c"
+#include "./hotelExpenses.c"
 
 // ui globals
 int uiState;        // current state of ui state machine
@@ -88,11 +89,10 @@ int main(int argc, char(*argv[])) {
 
         // use recieved values to calculate covered expenses
         mealCovered = costAllotedMeals(departureTime, arrivalTime, tripDays);
-        hotelCovered = 0;
         taxiCovered = 0;
         parkingCovered = 0;
         vehicleExpenses = 0;
-        //hotelCovered = costAllotedHotels(tripDays);
+        hotelCovered = costAllotedHotels(tripDays);
         //taxiCovered = costAllotedTaxis(tripDays);
         //parkingCovered = costAllotedParking(tripDays);
         //vehicleExpenses = costAllotedMiles(milesDriven);
