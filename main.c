@@ -92,7 +92,7 @@ int main(int argc, char(*argv[])) {
         taxiCovered = 0;
         parkingCovered = 0;
         vehicleExpenses = 0;
-        //hotelCovered = costAllotedHotels(tripDays);
+        //hotelCovered = costAllotedHotels(hotelExpenses, tripDays);
         //taxiCovered = costAllotedTaxis(tripDays);
         //parkingCovered = costAllotedParking(tripDays);
         //vehicleExpenses = costAllotedMiles(milesDriven);
