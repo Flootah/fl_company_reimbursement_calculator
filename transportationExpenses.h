@@ -5,16 +5,11 @@
   • Taxi fees, if a taxi was used anytime during the trip (The company allows up to $10 per day, for each day a taxi was used. Anything more than this must be paid by the employee.) 
   */
 
- #ifndef TRANSPORTATIONEXPENSES.H
- #define TRANSPORTATIONEXPENSES.H
+ #ifndef TRANSPORTATIONEXPENSES_H
+ #define TRANSPORTATIONEXPENSES_H
 
- float costAllotedTaxis(int daysSpent)
- {}
-
- float costAllotedParking(int daysSpent)
- {}
-
- float costAllotedMiles(int totalMiles)
- {}
+float costAllotedTaxis(int daysSpent);
+float costAllotedParking(int daysSpent);
+float costAllotedMiles(int totalMiles);
 
  #endif
