@@ -1,4 +1,4 @@
-# CS2600-Project-2 : Travel Expense Calculator
+Travel Expense Calculator
 
 Program that calculates and displays the total travel expenses of a businessperson on a trip. Company budget accounts for all the following:
 
